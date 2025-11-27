@@ -14,7 +14,7 @@ export default function App() {
 
   const nomeUsuario = 'Diego';
 
-  const isVisible = false;
+  const isVisible = true;
 
   const cars = [
     { id: 1, brand: 'Ferrari', km: 0, color: 'Amarelo', newCar: true },
@@ -36,11 +36,6 @@ export default function App() {
 
   return (
     <div>
-      <header className="flex items-center p-4 bg-indigo-600 shadow-lg fixed top-0 left-0 right-0 z-10 h-16">
-        <div className="text-2xl font-extrabold text-white tracking-wider">
-          <span className="text-yellow-300">⚛️</span> App de Estudos
-        </div>
-      </header>
 
       {isVisible && (
         <>
