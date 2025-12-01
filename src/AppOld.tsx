@@ -1,12 +1,13 @@
 import { useState } from 'react';
-// import './App.css';
-import './index.css'; // 👈 ESTE IMPORT É CRÍTICO!
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
+import AppLayout from './layout/AppLayout';
+// import Home from './pages/Home'; 
 
 import { Comp } from './components';
-
 import City from './assets/city.jpg';
 
-export default function App() {
+export default function AppOld() {
   const MENU_ITEMS = [
     { id: 0, title: 'Inicio', icon: '🏠' },
     { id: 1, title: 'Nova Aula', icon: '✍️' },
@@ -14,7 +15,7 @@ export default function App() {
 
   const nomeUsuario = 'Diego';
 
-  const isVisible = true;
+  const isVisible = false;
 
   const cars = [
     { id: 1, brand: 'Ferrari', km: 0, color: 'Amarelo', newCar: true },
@@ -36,7 +37,6 @@ export default function App() {
 
   return (
     <div>
-
       {isVisible && (
         <>
           <title>Secao 3</title>
