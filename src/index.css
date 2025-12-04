@@ -117,3 +117,26 @@ html, body, #root {
   .app-sidebar { display: none; }
   .app-content { padding: 12px; }
 }
+
+.sidebar-folder-title {
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-folder-link {
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.sidebar-folder-link:hover {
+  background: rgba(79,70,229,0.06);
+  color: rgba(255,255,255,1);
+}
