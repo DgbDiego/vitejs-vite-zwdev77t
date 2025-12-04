@@ -4,7 +4,7 @@ import NewLessonComponent from './pages/NewLesson.jsx';
 
 const PAGES = [
   { path: '/', element: 'Home', meta: { title: 'Início',icon: 'Home', menu: true, order: 0 } },
-  { path: '/pages/NewLesson', element: 'NewLesson', meta: { title: '📝 Nova Aula', menu: true, order: 1 } },
+  { path: '/pages/NewLesson', element: 'NewLesson', meta:  { title: 'Nova Aula', menu: true, order: 1 } },
 ];
 // --- FIM SIMULAÇÃO ---
 

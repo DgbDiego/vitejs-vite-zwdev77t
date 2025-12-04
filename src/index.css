@@ -89,7 +89,10 @@ html, body, #root {
 .app-sidebar a {
   color: rgba(255,255,255,0.8);
   text-decoration: none;
-  display: inline-block;
+  /* IMPORTANTE: Aqui, o display é importante para que o ícone e o texto fiquem alinhados */
+  display: flex; 
+  align-items: center;
+  gap: 8px; /* Usando gap para substituir mr-2 no NavLink */
   padding: 8px 10px;
   border-radius: 6px;
 }
