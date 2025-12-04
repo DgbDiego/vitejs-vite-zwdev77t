@@ -1,10 +1,10 @@
 :root {
   --header-height: 64px;
   --sidebar-width: 220px;
-  --bg: #121212;
+  --bg: #fafafa;
   --card: #1e1e1e;
   --accent: #4f46e5;
-  --text: #ffffff;
+  --text: #292929;
 }
 
 * { box-sizing: border-box; }
@@ -33,7 +33,7 @@ html, body, #root {
 
 .app-header-inner {
   width: 100%;
-  max-width: 1100px;
+  max-width: 98%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -71,12 +71,13 @@ html, body, #root {
 
 /* Sidebar */
 .app-sidebar {
+  color: white;
   width: var(--sidebar-width);
-  background: #0f0f0f;
+  background: #202020;
   padding: 20px 12px;
   border-right: 1px solid rgba(255,255,255,0.03);
   min-height: calc(100vh - var(--header-height));
-  position: sticky;
+  position: fixed;
   top: var(--header-height);
 }
 
@@ -106,8 +107,9 @@ html, body, #root {
 .app-content {
   flex: 1;
   padding: 20px;
-  max-width: calc(1100px - var(--sidebar-width));
-  margin: 0 auto;
+  max-width: calc(100vh var(--sidebar-width));
+  margin: var(--sidebar-width);
+  margin-top: var(--header);
 }
 
 /* Responsivo simples */

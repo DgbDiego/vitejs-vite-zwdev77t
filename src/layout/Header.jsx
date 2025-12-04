@@ -7,11 +7,13 @@ export default function Header(){
             <div className='app-header-inner'>
                 <div className='logo'>
                     <span className='logo-icon'>⚛️</span>
-                    <span className='logo-text'>App de estudo</span>
+                    <span className='logo-text'>
+                        <Link to='/' className='header-link' >App de estudo</Link>
+                        </span>
                 </div>
-                <nav>
+                {/* <nav>
                     <Link to='/' className='header-link' >Inicio</Link>
-                </nav>
+                </nav> */}
             </div>
         </header>
     );

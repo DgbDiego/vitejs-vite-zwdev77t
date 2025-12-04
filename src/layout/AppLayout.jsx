@@ -21,7 +21,6 @@ export default function AppLayout() {
         <main className="app-content">
           <Outlet />
         </main>
-
       </div>
     </div>
   );

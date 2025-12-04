@@ -9,11 +9,15 @@ export default function Sidebar() {
   const IconMap = {
     Home: LucideIcons.Home,
     FileText: LucideIcons.FileText,
-};
+    Archive: LucideIcons.FolderClock,
+    FolderClock: LucideIcons.FolderClock,
+    Folder: LucideIcons.Folder,
+    File: LucideIcons.File,
+  };
 
   return (
     <aside className="app-sidebar">
-            <div className="text-white font-bold mb-6"> {/* Mantendo o estilo do título do menu */}
+            <div> {/* Mantendo o estilo do título do menu */}
                 Menu de Aulas
             </div>
       <ul>
@@ -30,18 +34,6 @@ export default function Sidebar() {
             </NavLink>
           </li>)
         })}
-        
-        {/* {pages.map((page) => (
-          
-          <li key={page.path}>
-            <NavLink
-              to={page.path}
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              {page.meta.title}
-            </NavLink>
-          </li>
-        ))} */}
       </ul>
     </aside>
   );
