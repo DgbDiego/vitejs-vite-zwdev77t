@@ -1,14 +1,26 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import * as LucideIcons from 'lucide-react';
+import { getMenuPages } from "../indexPages";
 
-export default function Sidebar(){
-    return(
-        <aside className="app-sidebar">
-            <ul>
-            <li><NavLink to='/' className={({isActive}) => isActive ? 'active' : ''}>Inicio</NavLink></li>
-            <li><NavLink to="/nova-aula" className={({isActive}) => isActive ? 'active' : ''}>Nova Aula</NavLink></li>
-            {/* <li><NavLink to="/aulas-antigas" className={({isActive}) => isActive ? 'active' : ''}>Aulas Antigas</NavLink></li> */}
-            </ul>
-        </aside>
-    );
+export default function Sidebar() {
+  const pages = getMenuPages();
+
+  return (
+    <aside className="app-sidebar">
+      <ul>
+
+        {pages.map((page) => (
+          <li key={page.path}>
+            <NavLink
+              to={page.path}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              {page.meta.title}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
 }

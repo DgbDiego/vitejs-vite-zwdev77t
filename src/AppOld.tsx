@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import AppLayout from './layout/AppLayout';
-// import Home from './pages/Home'; 
 
 import { Comp } from './components';
 import City from './assets/city.jpg';
@@ -15,7 +13,7 @@ export default function AppOld() {
 
   const nomeUsuario = 'Diego';
 
-  const isVisible = false;
+  const isVisible = true;
 
   const cars = [
     { id: 1, brand: 'Ferrari', km: 0, color: 'Amarelo', newCar: true },

@@ -11,7 +11,6 @@ export default function Header(){
                 </div>
                 <nav>
                     <Link to='/' className='header-link' >Inicio</Link>
-                    <Link to="/nova-aula" className="header-link">Nova Aula</Link>
                 </nav>
             </div>
         </header>
