@@ -20,7 +20,8 @@ export default function App() {
 
             if (!Component) {
                 // Se o componente não existir, o router ignora esta rota.
-                return null;
+                return (<Route path="*" element={<ComponentMap.NotFound />} />);
+                // return null;
             }
 
               return (

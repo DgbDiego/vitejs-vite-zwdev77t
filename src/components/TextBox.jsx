@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-function TextBox({ children, maxWidth }) {
+function TextBox({ children, maxWidth, textAlign='justify' }) {
   const textBoxStyle = {
     fontFamily: 'inherit',
     whiteSpace: 'pre-line',
@@ -10,7 +10,7 @@ function TextBox({ children, maxWidth }) {
     maxWidth: maxWidth,
     border: maxWidth ? '1px solid #ccc' : 'none',
     padding: maxWidth ? '10px' : '0',
-    textAlign: 'justify',
+    textAlign: textAlign
   };
 
   const rawMarkup = { __html: children };

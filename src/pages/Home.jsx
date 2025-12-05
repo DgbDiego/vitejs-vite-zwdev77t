@@ -1,5 +1,7 @@
 import React from "react";
 
+export const meta = { title: "Início", icon: "Home", menu: true, component: "Home", path: "/pages/Home" }
+
 export default function Home(){
     return (
         <div>

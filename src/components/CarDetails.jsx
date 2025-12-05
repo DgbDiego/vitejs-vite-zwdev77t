@@ -1,6 +1,8 @@
+import style from './CarDetails.module.css';
+
 const CarDetails = ({ brand, km, color, newCar }) => {
   return (
-    <div>
+    <div className={style.card}>
       <h2>Detalhes do carro</h2>
       <ul>
         <li>Marca: {brand}</li>

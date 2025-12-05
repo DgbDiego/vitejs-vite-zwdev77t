@@ -1,9 +1,11 @@
 :root {
   --header-height: 64px;
-  --sidebar-width: 220px;
+  --sidebar-width: 260px;
+  --sidebar-bg: #202020;
   --bg: #fafafa;
   --card: #1e1e1e;
   --accent: #4f46e5;
+  --text-accent: #ebebeb;
   --text: #292929;
 }
 
@@ -77,8 +79,44 @@ html, body, #root {
   padding: 20px 12px;
   border-right: 1px solid rgba(255,255,255,0.03);
   min-height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height));
+  overflow: auto;
   position: fixed;
   top: var(--header-height);
+  
+}
+
+/* 1. Define a LARGURA da barra de rolagem (deixando-a bem larga, 20px-24px, para o efeito) */
+.app-sidebar::-webkit-scrollbar {
+  width: 15px; 
+}
+
+/* 2. Define o FUNDO (Track) */
+.app-sidebar::-webkit-scrollbar-track {
+  /* Fundo preto absoluto para contraste máximo */
+  /* background: val(--sidebar-bg);  */
+  /* border-radius: 12px; */
+  /* Não é possível replicar os pontos brancos de forma robusta apenas com CSS,
+     mas podemos simular a profundidade com um box-shadow sutil */
+  /* box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5);  */
+}
+
+/* 3. Define o POLEGAR (Thumb) - O elemento azul de pílula */
+.app-sidebar::-webkit-scrollbar-thumb {
+  /* background-color: #4A90E2; Azul distinto   */
+  background-color: darkgray; /* Cinza escuro para um visual mais sóbrio */ 
+
+  /* Cria o formato de pílula, definindo um radius que é metade da largura (24px/2 = 12px) */
+  border-radius: 6px; 
+  /* Adiciona uma borda escura para dar profundidade e separá-lo do track */
+  border: 3px solid var(--sidebar-bg); 
+  /* Efeito de brilho sutil para o "thumb" flutuar */
+  /* box-shadow: 0 0 10px rgba(74, 144, 226, 0.4);  */
+}
+
+/* 4. Estilo ao passar o mouse sobre o thumb */
+.app-sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: var(); /* Azul levemente mais claro no hover */
 }
 
 .app-sidebar ul {
@@ -108,7 +146,7 @@ html, body, #root {
   flex: 1;
   padding: 20px;
   max-width: calc(100vh var(--sidebar-width));
-  margin: var(--sidebar-width);
+  margin-left: var(--sidebar-width);
   margin-top: var(--header);
 }
 
@@ -139,4 +177,35 @@ html, body, #root {
 .sidebar-folder-link:hover {
   background: rgba(79,70,229,0.06);
   color: rgba(255,255,255,1);
+}
+
+.Aula56 {
+    background-color: var(--card);
+    color: var(--text-accent);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: gray 0px 0px 10px;
+}
+
+.aula60-red-title {
+  background-color: #000;
+  color: red;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: gray 0px 0px 10px;
+}
+.aula60-title {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: gray 0px 0px 10px;
+}
+
+.desafio5 {
+  background-color: var(--card);
+  color: var(--text-accent);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: gray 0px 0px 10px;
 }

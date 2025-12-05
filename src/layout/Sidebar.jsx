@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import * as LucideIcons from 'lucide-react';
 import { getMenuPages } from "../indexPages";
+import TextBox from "../components/TextBox";
 
 
 const IconMap = {
@@ -9,10 +10,12 @@ const IconMap = {
     FileText: LucideIcons.FileText,
     FolderClock: LucideIcons.FolderClock,
     FileClock: LucideIcons.FileClock,
+    FileCheck: LucideIcons.FileCheck,
     Folder: LucideIcons.Folder,
     File: LucideIcons.File,
     ChevronDown: LucideIcons.ChevronDown,
     ChevronUp: LucideIcons.ChevronUp,
+
 };
 
 const SidebarItem = ({ page, depth = 0 }) => {
@@ -30,6 +33,7 @@ const SidebarItem = ({ page, depth = 0 }) => {
 
     // Renderiza um Item de Página clicável (sem children)
     if (!isFolder) {
+        const textComponent = ""
         return (
             <li className="mb-2">
                 <NavLink
@@ -38,7 +42,7 @@ const SidebarItem = ({ page, depth = 0 }) => {
                     className={({ isActive }) => (isActive ? "active" : "")}
                 >
                     <IconComponent size={20} />
-                    {page.title}
+                    <TextBox textAlign="left" >{`${page.title}`}</TextBox>
                 </NavLink>
             </li>
         );
