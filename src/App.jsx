@@ -19,7 +19,7 @@ export default function App() {
             const Component = ComponentMap[page.element];
 
             if (!Component) {
-                // Se o componente não existir, o router ignora esta rota.
+                // Se o componente não existir, renderiza a página de Not Found
                 return (<Route path="*" element={<ComponentMap.NotFound />} />);
                 // return null;
             }

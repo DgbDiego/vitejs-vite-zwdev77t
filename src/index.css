@@ -46,9 +46,9 @@ html, body, #root {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: white;
 }
 
@@ -208,4 +208,21 @@ html, body, #root {
   padding: 20px;
   border-radius: 20px;
   box-shadow: gray 0px 0px 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;      /* alinha na vertical */
+  justify-content: space-between; /* alinha na horizontal */
+  gap: 4px;               /* espaço entre os itens */
+}
+
+.column {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;      /* alinha na horizontal */
+  justify-content: space-between; /* alinha na vertical */
+  gap: 2px;               /* espaço entre os itens */
 }

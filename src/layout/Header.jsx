@@ -8,7 +8,7 @@ export default function Header(){
                 <div className='logo'>
                     <span className='logo-icon'>⚛️</span>
                     <span className='logo-text'>
-                        <Link to='/' className='header-link' >App de estudo</Link>
+                        <Link to='/pages/Home' className='header-link' >App de estudo</Link>
                         </span>
                 </div>
                 {/* <nav>

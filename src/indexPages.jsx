@@ -9,11 +9,21 @@ import aula60, {meta as aula60Meta} from './pages/secao4/aula60.jsx';
 import aula61, {meta as aula61Meta} from './pages/secao4/aula61.jsx';
 import desafio5, {meta as desafio5Meta} from './pages/secao4/desafio5.jsx';
 import aula64, {meta as aula64Meta} from './pages/secao5/aula64.jsx';
+import aula65, {meta as aula65Meta} from './pages/secao5/aula65.jsx';
+import aula66, {meta as aula66Meta} from './pages/secao5/aula66.jsx';
+import aula67, {meta as aula67Meta} from './pages/secao5/aula67.jsx';
+import aula68, {meta as aula68Meta} from './pages/secao5/aula68.jsx';
+import aula69, {meta as aula69Meta} from './pages/secao5/aula69.jsx';
+import aula70, {meta as aula70Meta} from './pages/secao5/aula70.jsx';
+import aula71, {meta as aula71Meta} from './pages/secao5/aula71.jsx';
+import aula72, {meta as aula72Meta} from './pages/secao5/aula72.jsx';
 import NotFound, {meta as notFoundMeta} from './pages/NotFound.jsx';
+
 
 export const ComponentMap = {
     Home: HomeComponent, // Mapeia 'Home' para o componente importado/simulado
     AppOld: AppOldComponent, // Mapeia 'AppOld' para o componente importado/simulado
+    NotFound: NotFound, // Componente padrão para páginas não encontradas
     aula56: aula56, // Mapeia 'aula56' para o componente importado/simulado
     aula57: aula57, // Mapeia 'aula57' para o componente importado/simulado
     aula58: aula58, // Mapeia 'aula58' para o componente importado/simulado
@@ -22,28 +32,42 @@ export const ComponentMap = {
     aula61: aula61, // Mapeia 'aula61' para o componente importado/simulado
     desafio5: desafio5, // Mapeia 'desafio5' para o componente importado/simulado
     aula64: aula64, // Mapeia 'aula64' para o componente importado/simulado
-    NotFound: NotFound, // Componente padrão para páginas não encontradas
+    aula65: aula65, // Mapeia 'aula65' para o componente importado/simulado
+    aula66: aula66, // Mapeia 'aula66' para o componente importado/simulado
+    aula67: aula67, // Mapeia 'aula67' para o componente importado/simulado
+    aula68: aula68, // Mapeia 'aula68' para o componente importado/simulado
+    aula69: aula69, // Mapeia 'aula69' para o componente importado/simulado
+    aula70: aula70, // Mapeia 'aula70' para o componente importado/simulado
+    aula71: aula71, // Mapeia 'aula71' para o componente importado/simulado
+    aula72: aula72, // Mapeia 'aula72' para o componente importado/simulado
 };
 // 1. Definição das Páginas (PAGES_JSON)
 export const PAGES_JSON = [
     homeMeta,
     { title: "Aulas", icon: "Folder", menu: true, children: [
-          { title: "Seção 4", icon: "Folder", menu: true, children: [
-                aula56Meta,
-                aula57Meta,
-                aula58Meta,
-                aula59Meta,
-                aula60Meta,
-                aula61Meta,
-                desafio5Meta,
-          ]},
-          { title: "Seção 5", icon: "Folder", menu: true, children: [
+        { title: "Seção 4", icon: "Folder", menu: true, children: [
+            aula56Meta,
+            aula57Meta,
+            aula58Meta,
+            aula59Meta,
+            aula60Meta,
+            aula61Meta,
+            desafio5Meta,
+        ]},
+        { title: "Seção 5", icon: "Folder", menu: true, children: [
             aula64Meta,
-          ]},
+            aula65Meta,
+            aula66Meta,
+            aula67Meta,
+            aula68Meta,
+            aula69Meta,
+            aula70Meta,
+            aula71Meta,
+            aula72Meta,
+        ]},
     
-          { title: "Aulas Antigas", icon: "FileClock", menu: true, component: "AppOld", path: "/AppOld" },
-        ],
-    },
+        { title: "Aulas Antigas", icon: "FileClock", menu: true, component: "AppOld", path: "/AppOld" },
+    ]},
 ];
 
 // 3. Função para obter o Menu Hierárquico (usado pelo Sidebar)
