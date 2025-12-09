@@ -17,6 +17,7 @@ import aula69, {meta as aula69Meta} from './pages/secao5/aula69.jsx';
 import aula70, {meta as aula70Meta} from './pages/secao5/aula70.jsx';
 import aula71, {meta as aula71Meta} from './pages/secao5/aula71.jsx';
 import aula72, {meta as aula72Meta} from './pages/secao5/aula72.jsx';
+import SecretWord, {meta as SecretWordMeta} from './pages/secao6/SecretWord.jsx';
 import NotFound, {meta as notFoundMeta} from './pages/NotFound.jsx';
 
 
@@ -40,6 +41,7 @@ export const ComponentMap = {
     aula70: aula70, // Mapeia 'aula70' para o componente importado/simulado
     aula71: aula71, // Mapeia 'aula71' para o componente importado/simulado
     aula72: aula72, // Mapeia 'aula72' para o componente importado/simulado
+    SecretWord: SecretWord, // Mapeia 'SecretWord' para o componente importado/simulado
 };
 // 1. Definição das Páginas (PAGES_JSON)
 export const PAGES_JSON = [
@@ -64,6 +66,9 @@ export const PAGES_JSON = [
             aula70Meta,
             aula71Meta,
             aula72Meta,
+        ]},
+        { title: "Seção 6", icon: "Folder", menu: true, children: [
+            SecretWordMeta,
         ]},
     
         { title: "Aulas Antigas", icon: "FileClock", menu: true, component: "AppOld", path: "/AppOld" },

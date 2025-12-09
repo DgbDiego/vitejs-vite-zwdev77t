@@ -78,7 +78,7 @@ export default function Sidebar() {
 
     return (
         <aside className="app-sidebar">
-            <div className="text-white font-bold text-lg mb-4">
+            <div>
                 Menu de Aulas
             </div>
             <ul>

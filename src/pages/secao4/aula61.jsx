@@ -18,7 +18,7 @@ const aula61 = () => {
             </TextBox>
             
         </BorderBox>
-        <h2 className={styles['aula61_title']}>Título estilizado com CSS Modules.</h2>
+        <h2 className={styles.aula61_title}>Título estilizado com CSS Modules.</h2>
         <h2 className='aula61_title'>Elemento com a mesma classe mas não acessa o estilo devido ao escopo. Só existe dentro do arquivo.</h2>
     </div>
   )
