@@ -18,6 +18,10 @@ import aula70, {meta as aula70Meta} from './pages/secao5/aula70.jsx';
 import aula71, {meta as aula71Meta} from './pages/secao5/aula71.jsx';
 import aula72, {meta as aula72Meta} from './pages/secao5/aula72.jsx';
 import SecretWord, {meta as SecretWordMeta} from './pages/secao6/SecretWord.jsx';
+import aula91, {meta as aula91Meta} from './pages/secao7/aula91.jsx';
+import aula92, {meta as aula92Meta} from './pages/secao7/aula92.jsx';
+import listaDeProdutos, {meta as listaDeProdutosMeta} from './pages/secao7/listaDeProdutos.jsx';
+
 import NotFound, {meta as notFoundMeta} from './pages/NotFound.jsx';
 
 
@@ -25,23 +29,26 @@ export const ComponentMap = {
     Home: HomeComponent, // Mapeia 'Home' para o componente importado/simulado
     AppOld: AppOldComponent, // Mapeia 'AppOld' para o componente importado/simulado
     NotFound: NotFound, // Componente padrão para páginas não encontradas
-    aula56: aula56, // Mapeia 'aula56' para o componente importado/simulado
-    aula57: aula57, // Mapeia 'aula57' para o componente importado/simulado
-    aula58: aula58, // Mapeia 'aula58' para o componente importado/simulado
-    aula59: aula59, // Mapeia 'aula59' para o componente importado/simulado
-    aula60: aula60, // Mapeia 'aula60' para o componente importado/simulado
-    aula61: aula61, // Mapeia 'aula61' para o componente importado/simulado
-    desafio5: desafio5, // Mapeia 'desafio5' para o componente importado/simulado
-    aula64: aula64, // Mapeia 'aula64' para o componente importado/simulado
-    aula65: aula65, // Mapeia 'aula65' para o componente importado/simulado
-    aula66: aula66, // Mapeia 'aula66' para o componente importado/simulado
-    aula67: aula67, // Mapeia 'aula67' para o componente importado/simulado
-    aula68: aula68, // Mapeia 'aula68' para o componente importado/simulado
-    aula69: aula69, // Mapeia 'aula69' para o componente importado/simulado
-    aula70: aula70, // Mapeia 'aula70' para o componente importado/simulado
-    aula71: aula71, // Mapeia 'aula71' para o componente importado/simulado
-    aula72: aula72, // Mapeia 'aula72' para o componente importado/simulado
-    SecretWord: SecretWord, // Mapeia 'SecretWord' para o componente importado/simulado
+    aula56: aula56, 
+    aula57: aula57, 
+    aula58: aula58, 
+    aula59: aula59, 
+    aula60: aula60, 
+    aula61: aula61, 
+    desafio5: desafio5,
+    aula64: aula64,
+    aula65: aula65,
+    aula66: aula66,
+    aula67: aula67,
+    aula68: aula68,
+    aula69: aula69,
+    aula70: aula70,
+    aula71: aula71,
+    aula72: aula72,
+    SecretWord: SecretWord,
+    aula91: aula91,
+    aula92: aula92,
+    listaDeProdutos: listaDeProdutos,
 };
 // 1. Definição das Páginas (PAGES_JSON)
 export const PAGES_JSON = [
@@ -69,6 +76,11 @@ export const PAGES_JSON = [
         ]},
         { title: "Seção 6", icon: "Folder", menu: true, children: [
             SecretWordMeta,
+        ]},
+        { title: "Seção 7", icon: "Folder", menu: true, children: [
+            aula91Meta,
+            aula92Meta,
+            listaDeProdutosMeta,
         ]},
     
         { title: "Aulas Antigas", icon: "FileClock", menu: true, component: "AppOld", path: "/AppOld" },
