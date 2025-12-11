@@ -1,0 +1,51 @@
+.loadingPanel {
+    /* 🎯 MUDANÇA PRINCIPAL: Usar absolute em vez de fixed */
+    position: absolute; 
+    top: 0;
+    left: 0;
+
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    
+    /* Cobrir 100% do elemento pai RELATIVO */
+    width: 100%; 
+    height: 100%;
+    
+    /* Fundo Preto com 80% de opacidade */
+    background-color: rgba(0, 0, 0, 0.8);
+    
+    /* Garantir que esteja acima do conteúdo do container */
+    z-index: 1000;
+    
+    /* Centralização */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Estado inicial (invisível) */
+.loadingPanel.hidden {
+    opacity: 0;
+    visibility: hidden; /* Garante que não é clicável */
+}
+
+/* Estado final (visível) */
+.loadingPanel.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.loadingPanel .cardPanel {
+    background-color: white;
+    color: #333; /* Cor do texto no card */
+    padding: 30px 40px;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    
+    /* Propriedades para o texto dentro do card */
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    justify-content: baseline;
+    width: 350px; /* Limita a largura do card */
+    max-width: 350px;
+    height: 200px;
+    max-width: 400px;
+}

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-
+import {useFetch} from '../../hooks/useFetch'
+import LoadingPanel, {vis } from '../../components/loadingPanel';
  export const meta = {
     title: "Lista de Produtos",
     icon: "FileCheck",
@@ -14,66 +15,99 @@ const listaDeProdutos = () => {
 
     const [products, setProducts] = useState([]);
 
+    // Aula 96 - Custom Hook
+    const { data: items, httpConfig, loading } = useFetch(url);
+
     const [name,setName] = useState("");
     const [price,setPrice] = useState("");
 
     // Aula 93 - Resgatando dados
-    useEffect(() => {
-        async function fetchData() {
-            // Consome a url ( ela retorna em formato texto)
-            const res = await fetch(url);
-            // Converte para json
-            const data = await res.json();
-            setProducts(data);
-        }
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const res = await fetch(url);
+    //         const data = await res.json();
+    //         setProducts(data);
+    //     }
 
-        fetchData();
-    },[]);
-    console.log(products);
+    //     fetchData();
+    // },[]);
 
     // Aula 94 - Adicionando dados
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const response = await fetch(url);
-        const products = await response.json();
+        // Calcular o próximo ID
+        // const response = await fetch(url);
+        // const products = await response.json();
 
-        console.log("quantidade: " + products.length)
+        // console.log("quantidade: " + products.length)
 
-        // 2. Calcular o próximo ID
-        const lastId = products.length > 0 
-            ? Math.max(...products.map(p => typeof p.id === 'number' ? p.id : 0)) // Garante que o ID é numérico e pega o maior
-            : 0;
+        // const lastId = products.length > 0 
+        //     ? Math.max(...products.map(p => typeof p.id === 'number' ? p.id : 0)) // Garante que o ID é numérico e pega o maior
+        //     : 0;
         
-        const nextId = lastId + 1;
+        // const nextId = lastId + 1;
 
         const product = {
-            id: nextId,
+            // id: nextId,
             name,
             price
         };
 
-        const res = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(product)
-        });
-        console.log(product)
+        // Aula 97 - Refatorando Post
+        // const res = await fetch(url, {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify(product)
+        // });
+
+        // const addedProduct = await res.json();
+
+        // Aula 95 - Carregamento dinamico
+        // setProducts((prevProducts) => [...prevProducts,addedProduct]);
+
+        httpConfig(product, "POST")
+
+        resetForm();
+        alert("Produto inserido com sucesso")
 
     }
+    const [showInfoPanel, setShowInfoPanel] = useState(false)
 
+    const showMessage = ({sec}) => {
 
+        const ms = sec * 1000;
+        setShowInfoPanel(true);
+        
+        setTimeout(() => {
+            setShowInfoPanel(false);
+        },ms);
+        
+        console.log(teste)
+    };
+
+    const showPanel = () => {
+        LoadingPanel(message= "teste", enabled=true)
+    }
+
+    const resetForm = () => {
+        setName("")
+        setPrice("")
+    }
 
   return (
-    <div>
+      <div>
         <h1>Lista de Produtos</h1>
-        <ul>
-            {products.map((product) => ( 
-                <li key={product.id}>{product.name} - R$: {product.price}</li>
+        {/* Aula 98 - Loading */}
+        <button onClick={() => showPanel()}></button>
+        {loading && <p>Carregando...</p> }
+        {!loading && <ul>
+            {items && items.map((product) => ( 
+                <li key={product.id}>[{product.id}] -- {product.name} - R$: {product.price}</li>
             ))}
-        </ul>
+        </ul>}
         <div className="add-product">
             <form onSubmit={handleSubmit}>
                 <h2>Incluir novo produto</h2>
@@ -88,6 +122,7 @@ const listaDeProdutos = () => {
                 <input type="submit" value="Criar" />
             </form>
         </div>
+        <LoadingPanel /> 
     </div>
   )
 }
